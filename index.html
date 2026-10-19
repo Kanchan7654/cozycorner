@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Corner | Little Things, Happier Spaces</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff9f5;
+            color: #553c40;
+        }
+
+        header {
+            background-color: #f7dce3;
+            padding: 22px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        nav {
+            background-color: #fff0f3;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            margin: 6px;
+            color: #69464e;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            color: #c45e7b;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 20px;
+            background-color: #f5e5dc;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .categories, .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 25px auto;
+        }
+
+        .category, .product {
+            background: white;
+            padding: 18px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px #ead8d5;
+        }
+
+        .category {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .category .emoji {
+            font-size: 48px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            font-size: 17px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #bd6079;
+        }
+
+        .product button, .back-button {
+            background-color: #d88ca0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .product button:hover, .back-button:hover {
+            background-color: #bb6e83;
+        }
+
+        #shopPage {
+            display: none;
+        }
+
+        .cart {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 12px;
+        }
+
+        footer {
+            background-color: #f7dce3;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+        }
+img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+.cart-item img {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background:#fff5f7 ;
+    border-radius: 10px;
+}
+
+.cart-item p {
+    margin: 0;
+    flex: 1;
+}
+
+.cart-item button {
+    flex-shrink: 0;
+}
+.cart-item button {
+    background-color: #F48FB1;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.cart-item button:hover {
+    background-color: #e75480;
+}
+.book-button {
+    background-color: #F48FB1;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.book-button:hover {
+    background-color: #E75480;
+}
+#orders-section {
+    background-color: #FFF0F5;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.order-card {
+    background-color: #FFD6E0;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+}
+
+#orders-section h2 {
+    color: #D81B60;
+}
+/* LOGIN PAGE DESIGN */
+#loginPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff9f5;
+    padding: 20px;
+}
+
+#loginPage header {
+    display: none;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px #ead8d5;
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #553c40;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #69464e;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #e8b9c6;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #d88ca0;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #d88ca0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #bb6e83;
+}
+    </style>
+</head>
+
+<body>
+<div id="loginPage">
+    <header>
+        <h1>♡ COZY CORNER ♡</h1>
+        <p>Little Things. Happier Spaces.</p>
+    </header>
+
+    <div class="login-box">
+        <h2>Welcome Back! 🎀</h2>
+        <p>Log in to your happy place ♡</p>
+
+        <form onsubmit="loginUser(event)">
+            <input type="text" id="username"
+                   placeholder="Username or Email" required>
+
+            <input type="password" id="password"
+                   placeholder="Password" required>
+
+            <button type="submit">LOGIN ♡</button>
+        </form>
+
+        <p>New to Cozy Corner?</p>
+        <button onclick="showSignup()">Create Account</button>
+    </div>
+</div>
+
+<header>
+    <h1>♡ COZY CORNER ♡</h1>
+    <p>Little Things. Happier Spaces.</p>
+</header>
+
+<nav id="mainNav" style="display: none;">
+    <button onclick="showHome()">HOME</button>
+    <button onclick="showCategory('Wallpapers')">WALLPAPERS</button>
+    <button onclick="showCategory('Room Decor')">ROOM DECOR</button>
+    <button onclick="showCategory('Bathroom Accessories')">BATHROOM</button>
+    <button onclick="showCategory('Lighting')">LIGHTING</button>
+<button onclick="showCategory('Bedding')">BEDDING</button>
+
+<button onclick="showCategory('Desk Accessories')">DESK ACCESSORIES</button>
+
+<button onclick="showCategory('Storage & Organisation')">STORAGE & ORGANISATION</button>
+
+<button onclick="showCategory('Cute Finds')">CUTE FINDS</button>
+   <button onclick="showCart()">🛍️ CART (<span id="cartCount">0</span>)</button>
+<button onclick="showOrders()">My Orders 💗</button>
+</nav>
+
+<div id="homePage" style="display: none;">
+    <section class="hero">
+        <h2>Make Your Little Corner Happier ♡</h2>
+        <p>Discover cute little things to make every space feel special.</p>
+        <button class="back-button" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+            EXPLORE COLLECTIONS
+        </button>
+    </section>
+
+    <section class="section" id="categories">
+        <h2>SHOP BY CATEGORY 🎀</h2>
+        <p>Find your next favourite little thing.</p>
+        <div class="categories" id="categoryGrid"></div>
+    </section>
+
+</div>
+
+<div id="shopPage" class="section">
+    <button class="back-button" onclick="showHome()">← Back to Home</button>
+    <h2 id="categoryTitle"></h2>
+    <div class="products" id="productGrid"></div>
+</div>
+
+<div id="cartPage" class="section" style="display:none">
+    <button class="back-button" onclick="showHome()">← Continue Shopping</button>
+    <h2>Your Shopping Bag ♡</h2>
+    <div class="cart" id="cartItems"></div>
+</div>
+<section id="orders-section" class="section" style="display: none;">
+    <h2>💗 My Orders</h2>
+    <div id="orders-list"></div>
+</section>
+<footer id="mainFooter" style="display: none;">
+    <h3>♡ COZY CORNER ♡</h3>
+    <p>Little Things. Happier Spaces.</p>
+    <p>Made with love for your happy place.</p>
+</footer>
+
+<script>
+    const categories = [
+        {name: "Wallpapers", emoji: "🌸"},
+        {name: "Room Decor", emoji: "🧸"},
+        {name: "Bathroom Accessories", emoji: "🛁"},
+        {name: "Lighting", emoji: "💡"},
+        {name: "Bedding", emoji: "🛏️"},
+        {name: "Desk Accessories", emoji: "🎀"},
+        {name: "Storage & Organisation", emoji: "🧺"},
+        {name: "Cute Finds", emoji: "♡"}
+    ];
+
+    const products = [
+        {name: "Pink Floral Wallpaper", price: 299, category: "Wallpapers", emoji: "🌸", image: "images/floral.jpg"},
+        {name: "Cloud Pattern Wallpaper", price: 349, category: "Wallpapers", emoji: "☁️", image: "images/cloud.jpg"},
+        {name: "Minimal Beige Wallpaper", price: 399, category: "Wallpapers", emoji: "🤎", image: "images/beige.jpg"},
+
+        {name: "Teddy Plushie", price: 299, category: "Room Decor", emoji: "🧸", image: "images/teddy.jpg"},
+        {name: "Decorative Flower Vase", price: 349, category: "Room Decor", emoji: "🌷",image: "images/flower-vase.jpg"},
+        {name: "Cute Photo Frame", price: 199, category: "Room Decor", emoji: "🖼️", image:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500"},
+
+        {name: "Cute Soap Dispenser", price: 249, category: "Bathroom Accessories", emoji: "🧴", image: "images/soap.jpg"},
+        {name: "Bathroom Organiser", price: 299, category: "Bathroom Accessories", emoji: "🧺", image: "images/org.jpg"},
+        {name: "Toothbrush Holder", price: 149, category: "Bathroom Accessories", emoji: "🪥", image: "images/tooth.jpg"},
+
+        {name: "Mini Moon Lamp", price: 499, category: "Lighting", emoji: "🌙", image: "images/moon.jpg"},
+        {name: "Fairy Lights", price: 199, category: "Lighting", emoji: "✨", image: "images/fairy.jpg"},
+
+        {name: "Pastel Pillow Cover", price: 249, category: "Bedding", emoji: "🛏️", image: "images/pillow.jpg"},
+       {
+    name: "Floral Bedsheet",
+    price: 599,
+    category: "Bedding",
+    emoji: "🌸",
+    image: "images/bedsheet.jpg"
+}, {name: "Cute Pen Holder", price: 149, category: "Desk Accessories", emoji: "🖊️", image: "images/pen.jpg"},
+        {name: "Storage Basket", price: 299, category: "Storage & Organisation", emoji: "🧺", image: "images/storage.jpg"},
+{
+    name: "Jewellery Organizer Box",
+    price: 349,
+    category: "Storage & Organisation",
+    emoji: "💍",
+    image: "images/jewellery.jpg"
+},
+{
+    name: "Makeup Organizer",
+    price: 399,
+    category: "Storage & Organisation",
+    emoji: "💄",
+    image: "images/makeup.jpg"
+},
+
+        {name: "Cute Mug", price: 199, category: "Cute Finds", emoji: "☕", image: "images/mug.jpg"},
+{
+    name: "Kawaii Keychains",
+    price: 99,
+    category: "Cute Finds",
+    emoji: "🎀",
+    image: "images/kawaii.jpg"
+},
+{
+    name: "Mini Plushie",
+    price: 299,
+    category: "Cute Finds",
+    emoji: "🧸",
+    image: "images/mini.jpg"
+},
+
+    ];
+
+  let cart = [];
+
+let orders = JSON.parse(localStorage.getItem("cozyCornerOrders")) || [];
+    const categoryGrid = document.getElementById("categoryGrid");
+
+    categories.forEach(category => {
+        categoryGrid.innerHTML += `
+            <div class="category" onclick="showCategory('${category.name}')">
+                <div class="emoji">${category.emoji}</div>
+                <h3>${category.name}</h3>
+                <p>Explore Collection →</p>
+            </div>
+        `;
+    });
+
+    function showHome() {
+        document.getElementById("homePage").style.display = "block";
+        document.getElementById("shopPage").style.display = "none";
+        document.getElementById("cartPage").style.display = "none";
+        window.scrollTo(0, 0);
+    }
+
+    function showCategory(categoryName) {
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("cartPage").style.display = "none";
+        document.getElementById("shopPage").style.display = "block";
+
+        document.getElementById("categoryTitle").textContent = categoryName;
+
+        const grid = document.getElementById("productGrid");
+        grid.innerHTML = "";
+
+        const matchingProducts = products.filter(
+            product => product.category === categoryName
+        );
+
+        matchingProducts.forEach(product => {
+            const index = products.indexOf(product);
+
+            grid.innerHTML += `
+                <div class="product">
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p class="price">₹${product.price}</p>
+                    <button onclick="addToCart(${index})">Add to Cart ♡</button>
+                </div>
+            `;
+        });
+
+        if (matchingProducts.length === 0) {
+            grid.innerHTML = "<p>New products coming soon! ♡</p>";
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    function addToCart(index) {
+        cart.push(products[index]);
+        document.getElementById("cartCount").textContent = cart.length;
+        alert(products[index].name + " added to your cart! ♡");
+    }
+
+    function showCart() {
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("shopPage").style.display = "none";
+        document.getElementById("cartPage").style.display = "block";
+
+        const cartItems = document.getElementById("cartItems");
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = "<p>Your bag is waiting for something cute! ♡</p>";
+        } else {
+            let total = 0;
+
+            cartItems.innerHTML = cart.map((product, index) => {
+                total += product.price;
+
+                return `
+                         <div class="cart-item">
+    <img src="${product.image}" alt="${product.name}" class="cart-image">
+
+    <p>${product.name} — ₹${product.price}</p>
+
+    <button onclick="removeFromCart(${index})">Remove</button>
+</div>          `;
+            }).join("");
+
+            cartItems.innerHTML += `<h3>Total: ₹${total}</h3>`;
+cartItems.innerHTML += `<button onclick="bookItems()" class="book-button">Book Items</button>`;
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        document.getElementById("cartCount").textContent = cart.length;
+        showCart();
+    }
+function bookItems() 
+ {
+    if (cart.length === 0) {
+        alert("Your cart is empty! 💗");
+        return;
+    }
+
+    orders.push([...cart]);
+localStorage.setItem("cozyCornerOrders", JSON.stringify(orders));
+    alert("Order Confirmed! 💗");
+
+    cart = [];
+
+    document.getElementById("cartCount").textContent = cart.length;
+
+    showCart();
+}
+function displayOrders() {
+    const ordersList = document.getElementById("orders-list");
+
+    ordersList.innerHTML = "";
+
+    orders.forEach((order, index) => {
+        ordersList.innerHTML += `
+            <div class="order-card">
+                <h3>Order ${index + 1} 💗</h3>
+                ${order.map(product => `
+                    <div style="display: flex; align-items: center; gap: 12px; margin: 10px 0;">
+                        <img src="${product.image}"
+                             alt="${product.name}"
+                             style="width: 70px; height: 70px; object-fit: contain;">
+                        <p>${product.name} — ₹${product.price}</p>
+                    </div>
+                `).join("")}
+                <p><strong>Total: ₹${order.reduce((sum, product) => sum + Number(product.price), 0)}</strong></p>
+            </div>
+        `;
+    });
+}
+
+function showOrders() {
+    document.getElementById("orders-section").style.display = "block";
+
+    displayOrders();
+
+    document.getElementById("orders-section").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+function showSignup() {
+    document.getElementById("loginPage").innerHTML = `
+        <div class="login-box">
+            <h2>Create Your Account 🎀</h2>
+            <p>Join Cozy Corner ♡</p>
+
+            <form onsubmit="createAccount(event)">
+                <input type="text" id="newUsername"
+                       placeholder="Choose a Username" required>
+
+                <input type="email" id="newEmail"
+                       placeholder="Enter Your Email" required>
+
+                <input type="password" id="newPassword"
+                       placeholder="Create Password" required>
+
+                <input type="password" id="confirmPassword"
+                       placeholder="Confirm Password" required>
+
+                <button type="submit">CREATE ACCOUNT ♡</button>
+            </form>
+
+            <p>Already have an account?</p>
+            <button onclick="showLogin()">Back to Login</button>
+        </div>
+    `;
+}
+function createAccount(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("newUsername").value.trim();
+    const email = document.getElementById("newEmail").value.trim();
+    const password = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match! 💗");
+        return;
+    }
+
+    const account = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    localStorage.setItem("cozyCornerAccount", JSON.stringify(account));
+
+    alert("Account created successfully! 🎀");
+
+    showLogin();
+}
+function showLogin() {
+    location.reload();
+}
+function loginUser(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+
+    const savedAccount = localStorage.getItem("cozyCornerAccount");
+
+    if (!savedAccount) {
+        alert("Please create an account first! 💗");
+        return;
+    }
+
+    const account = JSON.parse(savedAccount);
+
+    const usernameMatches =
+        username.toLowerCase() === account.username.toLowerCase() ||
+        username.toLowerCase() === account.email.toLowerCase();
+
+    if (usernameMatches && password === account.password) {
+        alert("Login successful! Welcome to Cozy Corner 🎀");
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.querySelector("body > header").style.display = "block";
+        document.getElementById("mainNav").style.display = "block";
+        document.getElementById("homePage").style.display = "block";
+        document.getElementById("mainFooter").style.display = "block";
+
+        window.scrollTo(0, 0);
+    } else {
+        alert("Incorrect username/email or password. Please try again! 💗");
+    }
+}
+</script>
+</section>
+</body>
+</html>
+
